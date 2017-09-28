@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+<h1 style="color: orange">Filter By example</h1> </hr></br>
+<div ng-app="myApp" ng-controller="myCtrl">
+FirstName: <input="text" ng-model="firstname"></br> 
+LastName: <input="text" ng-model="lastname"></br>
+Salary: <input="number" ng-model="salary"></br>
+Date:<input="date" ng-model="dateval"> </br>
+</br>
+FirstName: {{firstname|lowercase}} </br>
+LastName: {{lastname|uppercase}} </br>
+Salary1:{{salary|number}} </br>  <!-- max 3 functions are updated in it -->
+Salary2: {{salary|number:0}} </br> <!-- removing Fractions -->
+Salary3:{{salary|number:2}} </br>  <!-- neagtive fractions only upto 2 numbers -->
+Date:{{dateval| date:'short|medium|longDate'}} </br>
+Date:{{dateval| date:'dd/mm/yyyy hh:mm'}} </br>
+
+
+
+</div>
+
+</body>
+</html>
