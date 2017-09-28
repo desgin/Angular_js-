@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html ng-app="myApp">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body ng-controller="MainCtrl">
+<h1>Filter By Example</h1></hr></br>
+
+SearchBy: <input type="text" ng-model="SearchBy"/>
+<ul> <li ng-reapeat="emp in employees| orderBy: 'name'|limitTo: 5|filter: SearchBy"> {{emp.name}}-{{emp.age}}-{{emp.gender}}</li>
+</ul>
+<script>
+var app= angular.module('myApp', []);
+app.controller('MainCtrl', function ($scope)
+{
+$scope.employees=[
+{name: 'chiru', age: 25, gender: 'boy '}, 
+{name: 'Devi', age: 24, gender: 'girl '},
+{name: 'Kapil', age: 23, gender: 'boy '},
+{name: 'pinky', age: 22, gender: 'girl'},
+{name: 'karan ', age: 21, gender: 'boy '},
+{name: 'Padma ', age: 25, gender: 'girl '},
+{name: 'gunty ', age: 24, gender: 'boy '},
+{name: 'frinky ', age: 23, gender: 'girl '},
+{name: 'arjun', age: 22, gender: 'boy '},
+];
+});
+</script>
+</body>
+</html>

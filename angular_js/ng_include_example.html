@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+<script>
+ var app = angular.module('myApp',[]).controller('myController',function($scope){
+ var employees = [
+ {name:"devi",gender:"female",salary:"70,000k"},
+ {name:"karan",gender:"male",salary:"65,000k"},
+ {name:"arjun",gender:"male", salary:"80,000k"},
+ {name:"amala",gender:"female",salary:"70,000k"},
+ {name:"amar",gender:"male",salary:"65,000k"}
+ ]
+ 
+ $scope.employees = employees;
+ 
+ });
+ </script>
+ </head>
+<body ng-app="myApp">
+<div ng-controller="myController">
+<div ng-include="'employer_table.html'"> </div>
+ </div>
+ 
+</body>
+</html>
