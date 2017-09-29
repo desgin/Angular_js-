@@ -4,11 +4,23 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 </head>
 <body ng-controller="MainCtrl">
+<div>
 <h1>Filter By Example</h1></hr></br>
 
 SearchBy: <input type="text" ng-model="SearchBy"/>
 <ul> <li ng-reapeat="emp in employees| orderBy: 'name'|limitTo: 5|filter: SearchBy"> {{emp.name}}-{{emp.age}}-{{emp.gender}}</li>
 </ul>
+</div>
+<div>
+<h1> Filter by example with multiple parameters</h1> </hr></br>
+Search by name: <input type="text" ng-model="search.name">
+Search by age: <input type="text" ng-model="search.age">
+Search by gender: <input type="text" ng-model="search.gender">
+
+<ul> <li ng-repeat="emp in employees| orderBy:'-name'|limitTo:5|filter:{name: search.name, age:search.age,gender:search.gender}"> {{emp.name}}-{{emp.age}}-{{emp.gender}}</li>
+
+</ul>
+</div>
 <script>
 var app= angular.module('myApp', []);
 app.controller('MainCtrl', function ($scope)
